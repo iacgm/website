@@ -1,6 +1,6 @@
 ---
 date: '2025-09-20'
-draft: true
+draft: false
 title: 'Rewrite it in Brainfuck.'
 ---
 
