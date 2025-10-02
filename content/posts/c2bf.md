@@ -229,7 +229,7 @@ All over the place, we see sequences like `<>` or `><`, which can be eliminated 
 
 These are not hard to detect, and doing so allows us to skip-ahead and execute large blocks at a time in one fell swoop. Doing so speeds up our code massively. For example, adding 100 to 100 would normally take about 600 instructions, but instead becomes a single instruction.
 
-I tried rendering a single frame of donut.c without these optimizations, but gave up after about 20 hours becaues my laptop started to overheat so much that my screen became unresponsive. Some back-of-the-napkin math shows I could have expected to wait about 28 hours on my machine.
+I tried rendering a single frame of donut.c without these optimizations, but gave up after about 20 hours because my laptop started to overheat so much that my screen became unresponsive. Some back-of-the-napkin math shows I could have expected to wait about 28 hours on my machine.
 
 With these optimizations, we can render a frame in about 90 minutes.
 
