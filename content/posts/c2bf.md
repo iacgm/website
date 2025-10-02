@@ -77,13 +77,13 @@ This compiler is not really all that different from any other, so is a good basi
 
 1. **Lexing**: This step converts a stream of characters into **tokens**. That is, it splits our code into keywords, identifiers, symbols, etc...
 2. **Parsing**: This step converts a stream of tokens into an **abstract syntax tree** (AST). That is, it splits our code into constructs: expressions, statements, definitions, etc...
-3. **IR Code Generation**: At this step, we convert our AST into an **intermediate representation** (IR): that is, a language that somehow bridges the gap between C and Brainfuck. It should be something easy to translate both into and out of.
+3. **IR Code Generation**: At this step, we convert our AST into an **intermediate representation** (IR). That is, a language that somehow bridges the gap between C and Brainfuck. It should be something easy to translate both into and out of.
 4. **BF Code Generation**: At this step, we translate each IR instruction into Brainfuck.
 5. **Peephole Optimization**: This step is not really needed, but in order to acheive reasonable execution speeds, we will need to get make our Brainfuck interpreter recognize certain patterns common in Brainfuck which can be sped up, or even skipped entirely.
 
 ### Lexing & Parsing
 
-This is, more-or-less, a solved problem. This is the one part of this project where I made use of an external library, [Pest](https://pest.rs/). This allows us to specify our grammar (in this case, the [C99 grammar](https://www.quut.com/c/ANSI-C-grammar-l-1999.html)[^C99]) in something like [Backus-Naur Form](https://en.wikipedia.org/wiki/Backus%E2%80%93Naur_form). For example:
+This is, more-or-less, a solved problem. This is the one part of this project where I made use of an external library, [Pest](https://pest.rs/). This allows us to specify our grammar (in this case, a slightly modified [C99 grammar](https://www.quut.com/c/ANSI-C-grammar-l-1999.html)[^C99]) in something more like [Backus-Naur Form](https://en.wikipedia.org/wiki/Backus%E2%80%93Naur_form). For example:
 
 ```
 if_stmt = { "if" ~ "(" ~ expr ~ ")" ~ stmt ~ ("else" ~ stmt)? }
@@ -124,7 +124,7 @@ mov r1, 3
 mov r2, 2
 mul r1, r1, r2 ; multiply r1 & r2
 add r0, r0, r1 ; add r1 to r0
-putchar r0     ; or whatever the I/O convention is
+putchar r0     ; ... or whatever the I/O convention is
 ```
 
 But our stack-based IR has no (non-constant) arguments at all. Instead, each argument acts on the outputs of the previous ones:
@@ -161,7 +161,7 @@ The stack-based IR is especially nice because Brainfuck's semantics basically pr
 We just move the tape head and increment the new cell 5 times.
 2. `Add`: `[-<+>]<`  
 Slightly more complicated, but not too bad. If `x` & `y` are our arguments, we repeatedly decrement `x` & increment `y`, until `x` is zero. Then, we shift the head back one cell to free a space on the stack.
-3. `Store(3)`: `<<<[-]>>>[-<<<+>>>]<`
+3. `Store(3)`: `<<<[-]>>>[-<<<+>>>]<`  
 To move a value from the top of the stack to a slot further down, we just clear that slot, then add the value at the top of the stack, and then move the tape head back.
 4. `GoTo`: Hm...
 While arithmetic and other basic operations can be implemented by direct translations[^translations], implementing the jumping we need for general control flow (or for function pointers) is more complicated.
@@ -171,7 +171,7 @@ While arithmetic and other basic operations can be implemented by direct transla
 
 Again, I encourage you to stop and think through this. This is another puzzle.
 
-This time, the idea is to use a whole-program transformation. We can wrap the whole program in a `[`/`]` loop, and then gate each block of assembly in an if-statement. This way, we only need to implement one simple kind of control flow in Brainfuck. As an example:
+This time, the idea is to use a whole-program transformation. We can wrap the whole program in a `[`/`]` loop, and then gate each block of assembly in an if-statement. This way, we only need to implement one simple kind of control flow in Brainfuck. For example:
 
 ```c
 a:
@@ -253,7 +253,7 @@ Some major missing features are:
 
 After completing this project and doing some research, I found that the idea for this project, like any good idea, has been had several times before. However, while I definitely commend anyone who undertakes the important work of build X-to-Brainfuck compilers, I do think my approach sets this project apart from the others.
 
-Several projects (such as the one described [here](https://www.bozidarevic.com/2019/12/transpiling-c-into-brainfuck/)) exist which can translate simple commands, and even loops, but do not support things like function calls. The linked article even goes so far as to describe the `goto`-convention I used, but says it'd be too difficult to implement.
+Several projects (such as the one described [here](https://www.bozidarevic.com/2019/12/transpiling-c-into-brainfuck/)) exist which can translate simple commands, and even loops, but do not support things like function calls. The linked article even goes so far as to describe the jumping trick I used, but says it'd be too difficult to implement.
 
 The only ones I've found which are as complete as mine are ones which do work, but are more like emulators written in Brainfuck than transpilers. That is, rather than translate the code directly, they act like virtual machines, putting instructions into memory and then executing each one independently, simulating traditional memory and registers. [ELVM](https://github.com/shinh/elvm) is a project which targets many esolangs, but the BF implementation is essentially an emulator. Gregor Richards has [another project](https://esolangs.org/wiki/C2BF) which is explicitly an emulator.
 
