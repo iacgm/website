@@ -4,19 +4,19 @@ draft: false
 title: 'C? Rewrite it in Brainfuck'
 ---
 
-## Doing things worst
+## Doing It Worst
 
 People always seem to want to do things well, and when they fail, they tend to blame their tools. So it should come as no surprise that programmers, being somewhat similar to people (and being generally bad at what they do), have a long tradition of growing near-religious zeal for editors, paradigms, code styles, and, of course, programming languages. The bickering never ends, and whatever one person preaches, another [considers harmful](https://en.wikipedia.org/wiki/Considered_harmful).
 
 "_Static typing just gets in the way_", says one voice, "_Python lets me just code._"
 
-"_The borrow checker really isn't **that** bad, once you get used to it_", responds another, whose T-shirt reads "Rewrite it in Rust".
+"_The borrow checker really isn't **that** bad once you get used to it_", responds another, whose T-shirt reads "Rewrite it in Rust".
 
 "_Have fun with your loops and mutable state_", snickers a third, "_get back to me when you learn what a monad is._"  
 
-It is just how Boris Marshalov described Congress: "A man gets up to speak and says nothing. Nobody listens—and then everybody disagrees."
+It is exactly how Boris Marshalov described Congress: "A man gets up to speak and says nothing. Nobody listens—and then everybody disagrees."
 
-But then, miraculously, from the heavens above, we hear the wise, booming voices of [Church and Turing](https://en.wikipedia.org/wiki/Church%E2%80%93Turing_thesis) in unison, bringing clarity through the noise: "It simply does not matter", they say, "When all is said and done, they are all equivalent."
+But then, miraculously, from the heavens above, we hear the wise, booming voices of [Church and Turing](https://en.wikipedia.org/wiki/Church%E2%80%93Turing_thesis) in unison, bringing clarity through the noise: "It simply does not matter", they say, "In good hands, they are all equivalent."
 
 But what if you're not the sort of person who wants to do things well? What if you're the sort of person who wants to things bad? What if you want to do things _worst_?
 
@@ -30,7 +30,7 @@ Hello world in Brainfuck, for the uninitiated, reads as follows:
 ++++++++[>++++[>++>+++>+++>+<<<<-]>+>+>->>+[<]<-]>>.>---.+++++++..+++.>>.<-.<.+++.------.--------.>>+.>++.
 ```
 
-Over the last 30 years, Brainfuck has become a sort of running joke for programmers. They like to point and gawk and say, with mysticism and awe: "_Brainfuck may **look** like a mess, but it's Turing Complete: you can program absolutely anything you want in Brainfuck._" But you can't, because Brainfuck is **hard**, and you're not that smart.
+Over the last 30 years, Brainfuck has become a sort of running joke for programmers. They like to point and gawk and say, with mysticism and awe: "_Brainfuck may **look** like a mess, but it's Turing Complete: you can program anything you want in Brainfuck._" But you can't program anything you want in Brainfuck, because Brainfuck is **hard**, and you're not that smart.
 
 But _**I**_ can.
 
@@ -203,7 +203,7 @@ while (label != 0) {
 }
 ```
 
-Equality checks, while-non-zero loops, and if-statements are all, if not easy, at least tractable problems to address in BF itself.
+Implementing equality checks, while-non-zero loops, and if-statements in Brainfuck are all, if not easy, at least tractable problems.
 
 As for pointer-reads-and-writes, I will make no attempt to explain these, beyond linking [this excellent article](https://www.inshame.com/2008/02/efficient-brainfuck-tables.html).
 
@@ -247,7 +247,7 @@ Some major missing features are:
 - Support for variadic functions (including `printf`) and library functions more generally.
 - Differently-sized types (apart from arrays). Most Brainfuck interpreters use 1-byte cells. Mine uses 2-byte cells so they are large enough to store the labels to be jumped to, and so that I could have enough precision to implement usable fixed-point arithmetic.
 - Switch statements. No excuse here, just got a bit lazy.
-- Memory allocation / variable length arrays. This would be a complicated addition to make, since we would have to change how we access global variables, but it would not be impossible.
+- Memory allocation / variable length arrays. This would be a complicated addition to make, since we would have to change how we access global variables, but it would not be far out of reach.
 
 ## Similar Projects
 
@@ -257,4 +257,4 @@ Several projects (such as the one described [here](https://www.bozidarevic.com/2
 
 The only ones I've found which are as complete as mine are ones which do work, but are more like emulators written in Brainfuck than transpilers. That is, rather than translate the code directly, they act like virtual machines, putting instructions into memory and then executing each one independently, simulating traditional memory and registers. [ELVM](https://github.com/shinh/elvm) is a project which targets many esolangs, but the BF implementation is essentially an emulator. Gregor Richards has [another project](https://esolangs.org/wiki/C2BF) which is explicitly an emulator.
 
-There's nothing wrong with emulators, but I feel my approach gives more of a "true" translation (whatever that means), and the stack-based IR really is the secret ingredient for that. It's probably also much faster, since we just need to actually execute each instruction, as opposed to loading instructions from memory and dealing with program counters and registers and so on. I didn't benchmark them though, because fundamentally, what difference does it make. So it goes.
+There's nothing wrong with emulators, but I feel my approach gives more of a "true" translation (whatever that means), and the stack-based IR really is the secret ingredient for that. It's probably also much faster, since we just need to actually execute each instruction, as opposed to loading instructions from memory and dealing with program counters and registers and so on. I didn't benchmark them though, because my implementation is written in Rust, so no matter how slow it is, it's still blazingly fast...
