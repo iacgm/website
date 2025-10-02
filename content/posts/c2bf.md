@@ -36,7 +36,7 @@ But _**I**_ can.
 
 _**I**_ can make just about anything I want in Brainfuck. For instance, take [this recent Brainfuck creation of mine](/donut.bf), which displays an animation of a spinning donut:
 
-![ASCII Donut](/donut.png)
+![ASCII Donut](/donut.png#center)
 
 If this looks familiar, it's because it's a (slightly modified) version of Andy Sloane's famous C program, [donut.c](https://www.a1k0n.net/2011/07/20/donut-math.html), translated into Brainfuck. 
 
