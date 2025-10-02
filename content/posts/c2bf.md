@@ -55,7 +55,7 @@ Here's how I did it.
 
 ## Brainfuck Semantics
 
-Before we discuss the compiler iteself, it's worth going over Brainfuck's semantics.  
+Before we discuss the compiler itself, it's worth going over Brainfuck's semantics.  
 
 We start with an infinite tape of cells, each containing the number zero. We have a tape head pointing at the first of these. Then, we have eight instructions, each with its own symbol:
 1. `+`: Increment the cell under the tape head.
@@ -155,7 +155,7 @@ Notice that, while these instructions take arguments, they are all constants. We
 
 ### Translation into Brainfuck
 
-The stack-based IR is especially nice because Brainfuck's semantics basically provides us with a stack already, in the form of its tape. We can think of the tape head as pointing to the top of the stack and the cells to the head's left as the values on the stack. We should be careful to keep cells to the right of the tape head empty, so that we can use those cells as-needed. With this aproach, translating our first few instructions is a breeze. For example:
+The stack-based IR is especially nice because Brainfuck's semantics basically provide us with a stack already, in the form of its tape. We can think of the tape head as pointing to the top of the stack and the cells to the head's left as the values on the stack. We should be careful to keep cells to the right of the tape head empty, so that we can use those cells as-needed. With this aproach, translating our first few instructions is a breeze. For example:
 
 1. `Push(5)`: `>+++++`  
 We just move the tape head and increment the new cell 5 times.
@@ -251,7 +251,7 @@ Some major missing features are:
 
 ## Similar Projects
 
-After completing this project and doing some research, I found that the idea for this project, like any good idea, has been had several times before. However, while I definitely commend anyone who undertakes building a X-to-Brainfuck compiler, I do think my approach sets this project apart from the others.
+After completing this project and doing some research, I found that the idea for this project, like any good idea, has been had several times before. However, while I definitely commend anyone who undertakes the important work of build X-to-Brainfuck compilers, I do think my approach sets this project apart from the others.
 
 Several projects (such as the one described [here](https://www.bozidarevic.com/2019/12/transpiling-c-into-brainfuck/)) exist which can translate simple commands, and even loops, but do not support things like function calls. The linked article even goes so far as to describe the `goto`-convention I used, but says it'd be too difficult to implement.
 
