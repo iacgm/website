@@ -1,6 +1,6 @@
 baseURL: https://iacgm.pages.dev/
 languageCode: en-us
-title: Ian GM
+title: iacgm
 theme: ["PaperMod"]
 
 params:
@@ -10,14 +10,12 @@ params:
   disableThemeToggle: true
 
   homeInfoParams:
-    Title: Project Portfolio
+    Title: Hello!
     Content: >
-      Hi!  
-
       My name is Ian and I'm a programmer based in New York. I'm interested in math and computer science generally, but I'm especially interested in logic and programming languages.
   
   socialIcons:
     - name: github
-      url: "https://github.com/I-graham"
+      url: "https://github.com/iacgm"
     - name: email
       url: "ian.graham28@gmail.com"

@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="robots" content="noindex, nofollow">
-<title>Rewrite it in Brainfuck. | Ian GM</title>
+<title>C? Rewrite it in Brainfuck | iacgm</title>
 <meta name="keywords" content="">
 <meta name="description" content="Doing things worst
 People always seem to want to do things well, and when they fail, they tend to blame their tools. So it should come as no surprise that programmers, being somewhat similar to people (and being generally bad at what they do), have a long tradition of growing near-religious zeal for editors, paradigms, code styles, and, of course, programming languages. The bickering never ends, and whatever one person preaches, another considers harmful.">
@@ -36,7 +36,7 @@ People always seem to want to do things well, and when they fail, they tend to b
 <header class="header">
     <nav class="nav">
         <div class="logo">
-            <a href="http://localhost:1313/" accesskey="h" title="Ian GM (Alt + H)">Ian GM</a>
+            <a href="http://localhost:1313/" accesskey="h" title="iacgm (Alt + H)">iacgm</a>
             <div class="logo-switches">
             </div>
         </div>
@@ -50,15 +50,9 @@ People always seem to want to do things well, and when they fail, they tend to b
   <header class="post-header">
     
     <h1 class="post-title entry-hint-parent">
-      Rewrite it in Brainfuck.
-      <span class="entry-hint" title="Draft">
-        <svg xmlns="http://www.w3.org/2000/svg" height="35" viewBox="0 -960 960 960" fill="currentColor">
-          <path
-            d="M160-410v-60h300v60H160Zm0-165v-60h470v60H160Zm0-165v-60h470v60H160Zm360 580v-123l221-220q9-9 20-13t22-4q12 0 23 4.5t20 13.5l37 37q9 9 13 20t4 22q0 11-4.5 22.5T862.09-380L643-160H520Zm300-263-37-37 37 37ZM580-220h38l121-122-18-19-19-18-122 121v38Zm141-141-19-18 37 37-18-19Z" />
-        </svg>
-      </span>
+      C? Rewrite it in Brainfuck
     </h1>
-    <div class="post-meta"><span title='2025-09-20 00:00:00 +0000 UTC'>September 20, 2025</span>&nbsp;·&nbsp;12 min
+    <div class="post-meta"><span title='2025-10-01 00:00:00 +0000 UTC'>October 1, 2025</span>&nbsp;·&nbsp;12 min
 
 </div>
   </header> <div class="toc">
@@ -110,7 +104,7 @@ People always seem to want to do things well, and when they fail, they tend to b
 <p><em><strong>I</strong></em> can make just about anything I want in Brainfuck. For instance, take <a href="/donut.bf">this recent Brainfuck creation of mine</a>, which displays an animation of a spinning donut:</p>
 <p><img alt="ASCII Donut" loading="lazy" src="/donut.png"></p>
 <p>If this looks familiar, it&rsquo;s because it&rsquo;s a (slightly modified) version of Andy Sloane&rsquo;s famous C program, <a href="https://www.a1k0n.net/2011/07/20/donut-math.html">donut.c</a>, translated into Brainfuck.</p>
-<p>No, I did not write all 125,489 instructions of this myself. Instead, I spent 6 weeks writing a <a href="https://github.com/I-graham/c2bf">C-to-Brainfuck compiler</a>, and then modifying donut.c to use extra-low-precision fixed-point arithmetic.</p>
+<p>No, I did not write all 125,489 instructions of this myself. Instead, I spent 6 weeks writing a <a href="https://github.com/iacgm/c2bf">C-to-Brainfuck compiler</a>, and then modifying donut.c to use extra-low-precision fixed-point arithmetic.</p>
 <p>My compiler supports almost all of C&rsquo;s core features, including:</p>
 <ul>
 <li>integer arithmetic</li>
@@ -129,7 +123,7 @@ People always seem to want to do things well, and when they fail, they tend to b
 <li><code>+</code>: Increment the cell under the tape head.</li>
 <li><code>-</code>: Decrement the cell under the tape head.</li>
 <li><code>&gt;</code>: Move the tape head right.</li>
-<li><code>&lt;</code>: Move the tape hear left.</li>
+<li><code>&lt;</code>: Move the tape head left.</li>
 <li><code>,</code>: Store the next character from the input into the cell under the tape head.</li>
 <li><code>.</code>: Output the value stored in the cell under the tape head.</li>
 <li><code>[</code>: If the tape head points to a zero, jump to the corresponding <code>]</code>.</li>
@@ -138,7 +132,7 @@ People always seem to want to do things well, and when they fail, they tend to b
 <p>Essentially, <code>[</code>/<code>]</code> blocks act as <code>while-non-zero</code> loops.</p>
 <p>That&rsquo;s it. Really.</p>
 <h2 id="compiler-primer">Compiler Primer<a hidden class="anchor" aria-hidden="true" href="#compiler-primer">#</a></h2>
-<p>This compiler is not really all that different from any other, so this is as good as any to learn the basics of compilers from. All a compiler does is translate one language into another, with some intermediate steps. This is essentially done in a series of translation passes, each taking us slightly further along the path from the source code to the target language. In my compiler, the stages are:</p>
+<p>This compiler is not really all that different from any other, so is a good basis for learning the basics of compilers. All a compiler does is translate one language into another, with some intermediate steps. This is done in a series of translation passes, each taking us slightly further along the path from the source code to the target language. In my compiler, the stages are:</p>
 <ol>
 <li><strong>Lexing</strong>: This step converts a stream of characters into <strong>tokens</strong>. That is, it splits our code into keywords, identifiers, symbols, etc&hellip;</li>
 <li><strong>Parsing</strong>: This step converts a stream of tokens into an <strong>abstract syntax tree</strong> (AST). That is, it splits our code into constructs: expressions, statements, definitions, etc&hellip;</li>
@@ -147,7 +141,7 @@ People always seem to want to do things well, and when they fail, they tend to b
 <li><strong>Peephole Optimization</strong>: This step is not really needed, but in order to acheive reasonable execution speeds, we will need to get make our Brainfuck interpreter recognize certain patterns common in Brainfuck which can be sped up, or even skipped entirely.</li>
 </ol>
 <h3 id="lexing--parsing">Lexing &amp; Parsing<a hidden class="anchor" aria-hidden="true" href="#lexing--parsing">#</a></h3>
-<p>This is, more-or-less, a solved problem. This is the one part of this project where I made use of an external library, <a href="https://pest.rs/">Pest</a>. This allows us to specify our grammar (in this case, <a href="https://www.quut.com/c/ANSI-C-grammar-l-1999.html">C99 grammar</a><sup id="fnref:2"><a href="#fn:2" class="footnote-ref" role="doc-noteref">2</a></sup>) in something like Backus-Naur Form (BNF). For example:</p>
+<p>This is, more-or-less, a solved problem. This is the one part of this project where I made use of an external library, <a href="https://pest.rs/">Pest</a>. This allows us to specify our grammar (in this case, the <a href="https://www.quut.com/c/ANSI-C-grammar-l-1999.html">C99 grammar</a><sup id="fnref:2"><a href="#fn:2" class="footnote-ref" role="doc-noteref">2</a></sup>) in something like <a href="https://en.wikipedia.org/wiki/Backus%E2%80%93Naur_form">Backus-Naur Form</a>. For example:</p>
 <pre tabindex="0"><code>if_stmt = { &#34;if&#34; ~ &#34;(&#34; ~ expr ~ &#34;)&#34; ~ stmt ~ (&#34;else&#34; ~ stmt)? }
 </code></pre><p>Once Pest has constructed a parse tree, we can straightforwardly construct our AST. For example, our if-statement struct looks like:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-rust" data-lang="rust"><span style="display:flex;"><span><span style="color:#66d9ef">enum</span> <span style="color:#a6e22e">Stmt</span> {
@@ -156,8 +150,8 @@ People always seem to want to do things well, and when they fail, they tend to b
 </span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>}
 </span></span></code></pre></div><p>The same can be done for other constructs, essentially mindlessly.</p>
 <h3 id="ir-generation">IR Generation<a hidden class="anchor" aria-hidden="true" href="#ir-generation">#</a></h3>
-<p>This is really where the magic happens. But before discussing the compilation it&rsquo;s important to consider what the IR will look like. Our IR language must account for the fact that Brainfuck not have random access memory, and so every decision about where we store each value will create tangible, difficult obstacles when we try to translate into Brainfuck.</p>
-<p>This is a bit of a riddle that I encourage you to consider. Noticing a solution for this problem is what inspired me to work on this project at all.</p>
+<p>This is really where the magic happens. But before discussing the compilation it&rsquo;s important to consider what the IR will look like. Our IR language must account for the fact that Brainfuck does not have random access memory, and so every decision about where we store each value will create tangible, difficult obstacles when we try to translate into Brainfuck.</p>
+<p>This is a bit of a puzzle that I encourage you to consider. Noticing a solution for this problem is what inspired me to work on this project at all.</p>
 <p>The idea is to use a <a href="https://en.wikipedia.org/wiki/Stack-oriented_programming">stack-based</a> IR. What this means is that our instructions will not take any arguments, and we will instead operate on a single stack. This way, when we translate to Brainfuck, we will (for the most part) not have any arguments to retrieve from memory.</p>
 <p>For example, consider the statement:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#a6e22e">putchar</span>(<span style="color:#e6db74">&#39;0&#39;</span> <span style="color:#f92672">+</span> <span style="color:#ae81ff">3</span> <span style="color:#f92672">*</span> <span style="color:#ae81ff">2</span>);
@@ -180,7 +174,7 @@ People always seem to want to do things well, and when they fail, they tend to b
 </span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#a6e22e">Branch</span>(<span style="color:#66d9ef">L1</span>, <span style="color:#66d9ef">L2</span>) <span style="color:#75715e">; Jump to L1 if cond is true, L2 otherwise
 </span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#a6e22e">Label</span>(<span style="color:#66d9ef">L1</span>)
 </span></span><span style="display:flex;"><span><span style="color:#75715e">; [IR for `then`]
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#a6e22e">Goto</span>(<span style="color:#66d9ef">L3</span>)
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#a6e22e">GoTo</span>(<span style="color:#66d9ef">L3</span>)
 </span></span><span style="display:flex;"><span><span style="color:#a6e22e">Label</span>(<span style="color:#66d9ef">L2</span>)
 </span></span><span style="display:flex;"><span><span style="color:#75715e">; [IR for `else`]
 </span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#a6e22e">Label</span>(<span style="color:#66d9ef">L3</span>)
@@ -194,10 +188,10 @@ We just move the tape head and increment the new cell 5 times.</li>
 Slightly more complicated, but not too bad. If <code>x</code> &amp; <code>y</code> are our arguments, we repeatedly decrement <code>x</code> &amp; increment <code>y</code>, until <code>x</code> is zero. Then, we shift the head back one cell to free a space on the stack.</li>
 <li><code>Store(3)</code>: <code>&lt;&lt;&lt;[-]&gt;&gt;&gt;[-&lt;&lt;&lt;+&gt;&gt;&gt;]&lt;</code>
 To move a value from the top of the stack to a slot further down, we just clear that slot, then add the value at the top of the stack, and then move the tape head back.</li>
-<li><code>Goto</code>: Hm&hellip;&hellip;</li>
+<li><code>GoTo</code>: Hm&hellip;
+While arithmetic and other basic operations can be implemented by direct translations<sup id="fnref:3"><a href="#fn:3" class="footnote-ref" role="doc-noteref">3</a></sup>, implementing the jumping we need for general control flow (or for function pointers) is more complicated.</li>
 </ol>
-<p>While arithmetic and other basic operations can be implemented by <a href="https://esolangs.org/wiki/Brainfuck_algorithms">direct translations</a> (&ldquo;direct&rdquo; does not mean &ldquo;simple&rdquo;; just try implementing bitwise operations), getting the jumping we need for our control flow is more complicated.</p>
-<p>Again, I encourage you to stop and think through this. This is another sort of riddle.</p>
+<p>Again, I encourage you to stop and think through this. This is another puzzle.</p>
 <p>This time, the idea is to use a whole-program transformation. We can wrap the whole program in a <code>[</code>/<code>]</code> loop, and then gate each block of assembly in an if-statement. This way, we only need to implement one simple kind of control flow in Brainfuck. As an example:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span>a:
 </span></span><span style="display:flex;"><span>  <span style="color:#75715e">// Block A
@@ -239,16 +233,16 @@ To move a value from the top of the stack to a slot further down, we just clear 
 </span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>&lt;+&gt;&gt;<span style="color:#66d9ef">[</span>&gt;<span style="color:#66d9ef">]</span>&lt;<span style="color:#66d9ef">[</span>&gt;+&lt;----<span style="color:#66d9ef">[[</span>-<span style="color:#66d9ef">]</span>&gt;-&lt;<span style="color:#66d9ef">]</span>&gt;<span style="color:#66d9ef">[</span>-&lt;&lt;<span style="color:#66d9ef">[</span>&lt;<span style="color:#66d9ef">]</span>&lt;<span style="color:#66d9ef">[</span>-&lt;+&gt;&gt;+&lt;<span style="color:#66d9ef">]</span>&gt;<span style="color:#66d9ef">[</span>-&lt;+&gt;<span style="color:#66d9ef">]</span>&gt;<span style="color:#66d9ef">[</span>&gt;<span style="color:#66d9ef">]</span>&gt;<span style="color:#66d9ef">]</span>&lt;&lt;<span style="color:#66d9ef">[</span>&lt;<span style="color:#66d9ef">]</span>&lt;<span style="color:#66d9ef">[</span>-&gt;<span style="color:#75715e">
 </span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>++&lt;<span style="color:#66d9ef">]</span>&gt;<span style="color:#66d9ef">[</span>-&lt;+&gt;<span style="color:#66d9ef">]</span>&gt;&gt;<span style="color:#66d9ef">[</span>&gt;<span style="color:#66d9ef">]</span>&lt;<span style="color:#66d9ef">]</span>&lt;&lt;&lt;&lt;<span style="color:#66d9ef">[</span>-<span style="color:#66d9ef">]</span>&gt;<span style="color:#66d9ef">[</span>-&lt;+&gt;<span style="color:#66d9ef">]</span>&lt;<span style="color:#66d9ef">[</span>-&gt;+&gt;+&lt;&lt;<span style="color:#66d9ef">]</span>&gt;&gt;<span style="color:#66d9ef">[</span>-&lt;&lt;+&gt;&gt;<span style="color:#66d9ef">]</span>&lt;&gt;++++++++++<span style="color:#75715e">
 </span></span></span></code></pre></div><p>All over the place, we see sequences like <code>&lt;&gt;</code> or <code>&gt;&lt;</code>, which can be eliminated entirely. Even worse, we also find slow  <em>but optimal</em> code, such as long strings of <code>&gt;</code>/<code>&lt;</code> &amp; <code>+</code>/<code>-</code> instructions, <code>[-]</code> sections, and &ldquo;move&rdquo; blocks (i.e., blocks which clear a cell and add or subtract its value from other cells, such as <code>[-&lt;+&gt;]</code> or <code>[-&gt;&gt;+&gt;+&lt;&lt;&lt;]</code>).</p>
-<p>These are not hard to detect, and doing so allows us to skip-ahead and execute large blocks at a time in one fell swoop. Doing so speeds up our code massively. For example, adding 100 to 100 would normally take about 600 instructions, but instead becomes as single instruction.</p>
+<p>These are not hard to detect, and doing so allows us to skip-ahead and execute large blocks at a time in one fell swoop. Doing so speeds up our code massively. For example, adding 100 to 100 would normally take about 600 instructions, but instead becomes a single instruction.</p>
 <p>I tried rendering a single frame of donut.c without these optimizations, but gave up after about 20 hours becaues my laptop started to overheat so much that my screen became unresponsive. Some back-of-the-napkin math shows I could have expected to wait about 28 hours on my machine.</p>
 <p>With these optimizations, we can render a frame in about 90 minutes.</p>
-<p>We can take this even further though, because some profiling reveals that only a small number of complex instructions take up almost all of our runtime. After using a similar trick to detect bitwise operations, multiplications, divisions, and memory accesses, we can render a frame in about 12 minutes.</p>
+<p>We can take this even further though, because some profiling reveals that only a small number of complex instructions take up almost all of our runtime. After using a similar trick to detect complex instructions like bitwise operations, multiplications, divisions, and memory accesses, I can render a frame in about 12 minutes.<sup id="fnref:4"><a href="#fn:4" class="footnote-ref" role="doc-noteref">4</a></sup></p>
 <p>Yes, it&rsquo;s kind of cheating. No, I don&rsquo;t really care.</p>
 <h2 id="limitations">Limitations<a hidden class="anchor" aria-hidden="true" href="#limitations">#</a></h2>
 <p>There are some features missing, but for the most part, they would not be hard to add. The limiting factor was just that around this point, this project went from fun and educational to time-consuming and tedious.</p>
 <p>Some major missing features are:</p>
 <ul>
-<li>Support for variadic functions (including <code>printf</code>) and library functions for generally.</li>
+<li>Support for variadic functions (including <code>printf</code>) and library functions more generally.</li>
 <li>Differently-sized types (apart from arrays). Most Brainfuck interpreters use 1-byte cells. Mine uses 2-byte cells so they are large enough to store the labels to be jumped to, and so that I could have enough precision to implement usable fixed-point arithmetic.</li>
 <li>Switch statements. No excuse here, just got a bit lazy.</li>
 <li>Memory allocation / variable length arrays. This would be a complicated addition to make, since we would have to change how we access global variables, but it would not be impossible.</li>
@@ -256,8 +250,8 @@ To move a value from the top of the stack to a slot further down, we just clear 
 <h2 id="similar-projects">Similar Projects<a hidden class="anchor" aria-hidden="true" href="#similar-projects">#</a></h2>
 <p>After completing this project and doing some research, I found that the idea for this project, like any good idea, has been had several times before. However, while I definitely commend anyone who undertakes building a X-to-Brainfuck compiler, I do think my approach sets this project apart from the others.</p>
 <p>Several projects (such as the one described <a href="https://www.bozidarevic.com/2019/12/transpiling-c-into-brainfuck/">here</a>) exist which can translate simple commands, and even loops, but do not support things like function calls. The linked article even goes so far as to describe the <code>goto</code>-convention I used, but says it&rsquo;d be too difficult to implement.</p>
-<p>The only ones I&rsquo;ve found which are as complete as mine are ones which do work, but are more like emulators written in Brainfuck than transpilers. <a href="https://github.com/shinh/elvm">ELVM</a> is a project which targets many esolangs, but the BF implementation is essentially an emulator. Gregor Richards has <a href="https://esolangs.org/wiki/C2BF">another project</a> which is explicitly an emulator.</p>
-<p>There&rsquo;s nothing wrong with emulation, but I feel my approach gives more of a &ldquo;true&rdquo; translation (whatever that means), and the stack-based IR really is the secret ingredient for that. It&rsquo;s probably also faster, since we just need to actually execute each instruction, as opposed to dealing with program counters and registers and so on. I didn&rsquo;t benchmark them though, because fundamentally, what difference does it make. So it goes.</p>
+<p>The only ones I&rsquo;ve found which are as complete as mine are ones which do work, but are more like emulators written in Brainfuck than transpilers. That is, rather than translate the code directly, they act like virtual machines, putting instructions into memory and then executing each one independently, simulating traditional memory and registers. <a href="https://github.com/shinh/elvm">ELVM</a> is a project which targets many esolangs, but the BF implementation is essentially an emulator. Gregor Richards has <a href="https://esolangs.org/wiki/C2BF">another project</a> which is explicitly an emulator.</p>
+<p>There&rsquo;s nothing wrong with emulators, but I feel my approach gives more of a &ldquo;true&rdquo; translation (whatever that means), and the stack-based IR really is the secret ingredient for that. It&rsquo;s probably also much faster, since we just need to actually execute each instruction, as opposed to loading instructions from memory and dealing with program counters and registers and so on. I didn&rsquo;t benchmark them though, because fundamentally, what difference does it make. So it goes.</p>
 <div class="footnotes" role="doc-endnotes">
 <hr>
 <ol>
@@ -266,6 +260,12 @@ To move a value from the top of the stack to a slot further down, we just clear 
 </li>
 <li id="fn:2">
 <p>I would highly encourage anyone who hasn&rsquo;t done so to take a good, hard look at the C grammar, or at least to peruse the Microsoft language documentation. C is full of quirks that you might otherwise never encounter, and if there&rsquo;s one thing building a compiler forces you to do, it&rsquo;s to really, <em>really</em> learn your language.&#160;<a href="#fnref:2" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:3">
+<p>&ldquo;Direct&rdquo; does not mean &ldquo;simple&rdquo;; just try implementing bitwise operations without multiplication or division. Even unsigned comparisons are highly nontrivial. Take a look at <a href="https://esolangs.org/wiki/Brainfuck_algorithms">these</a> for inspiration.&#160;<a href="#fnref:3" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:4">
+<p>In order to be able to do this safely, we have to be sure that whenever we see the code for a bitwise operation (for example), it truly does just compute value, with no side effects. This means we have to be sure that all memory cells that that snippet of code could read have the values we expect. We can do this by having these instructions clear all the memory they need before using any of it.&#160;<a href="#fnref:4" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
 </ol>
 </div>
@@ -281,7 +281,7 @@ To move a value from the top of the stack to a slot further down, we just clear 
     </main>
     
 <footer class="footer">
-        <span>&copy; 2025 <a href="http://localhost:1313/">Ian GM</a></span> · 
+        <span>&copy; 2025 <a href="http://localhost:1313/">iacgm</a></span> · 
 
     <span>
         Powered by

@@ -1,5 +1,5 @@
 ---
-date: '2025-10-1'
+date: '2025-10-01'
 draft: false
 title: 'C? Rewrite it in Brainfuck'
 ---
@@ -40,7 +40,7 @@ _**I**_ can make just about anything I want in Brainfuck. For instance, take [th
 
 If this looks familiar, it's because it's a (slightly modified) version of Andy Sloane's famous C program, [donut.c](https://www.a1k0n.net/2011/07/20/donut-math.html), translated into Brainfuck. 
 
-No, I did not write all 125,489 instructions of this myself. Instead, I spent 6 weeks writing a [C-to-Brainfuck compiler](https://github.com/I-graham/c2bf), and then modifying donut.c to use extra-low-precision fixed-point arithmetic. 
+No, I did not write all 125,489 instructions of this myself. Instead, I spent 6 weeks writing a [C-to-Brainfuck compiler](https://github.com/iacgm/c2bf), and then modifying donut.c to use extra-low-precision fixed-point arithmetic. 
 
 My compiler supports almost all of C's core features, including:
 - integer arithmetic

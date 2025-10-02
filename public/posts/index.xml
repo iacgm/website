@@ -1,12 +1,34 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
-    <title>Posts on Ian GM</title>
-    <link>https://example.org/posts/</link>
-    <description>Recent content in Posts on Ian GM</description>
+    <title>Posts on iacgm</title>
+    <link>http://localhost:1313/posts/</link>
+    <description>Recent content in Posts on iacgm</description>
     <generator>Hugo -- 0.150.1</generator>
     <language>en-us</language>
-    <lastBuildDate></lastBuildDate>
-    <atom:link href="https://example.org/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 01 Oct 2025 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>C? Rewrite it in Brainfuck</title>
+      <link>http://localhost:1313/posts/c2bf/</link>
+      <pubDate>Wed, 01 Oct 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/c2bf/</guid>
+      <description>&lt;h2 id=&#34;doing-things-worst&#34;&gt;Doing things worst&lt;/h2&gt;
+&lt;p&gt;People always seem to want to do things well, and when they fail, they tend to blame their tools. So it should come as no surprise that programmers, being somewhat similar to people (and being generally bad at what they do), have a long tradition of growing near-religious zeal for editors, paradigms, code styles, and, of course, programming languages. The bickering never ends, and whatever one person preaches, another &lt;a href=&#34;https://en.wikipedia.org/wiki/Considered_harmful&#34;&gt;considers harmful&lt;/a&gt;.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Rule-Based Nurikabe Solver</title>
+      <link>http://localhost:1313/posts/nurikabe/</link>
+      <pubDate>Sat, 27 Sep 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/nurikabe/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Experiments in Program Synthesis</title>
+      <link>http://localhost:1313/posts/synthesizer/</link>
+      <pubDate>Thu, 15 May 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/synthesizer/</guid>
+      <description></description>
+    </item>
   </channel>
 </rss>
