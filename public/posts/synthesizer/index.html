@@ -5,9 +5,11 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="robots" content="noindex, nofollow">
-<title>Experiments in Program Synthesis | iacgm</title>
+<title>Building a Program Synthesizer | iacgm</title>
 <meta name="keywords" content="">
-<meta name="description" content="Experiments in Program Synthesis - iacgm">
+<meta name="description" content="Program synthesis is an incredibly general, mostly futile, and deeply fascinating endeavor.
+As the name implies, it&rsquo;s the study of programs which generate (or synthesize) other programs, usually after having been given some formal requirements or sample data to draw from.
+Last year, as part of my university coursework, I decided to build an enumerative program synthesizer (see here). That is, one which works via naive trial-and-error, possibly informed by programming language semantics and/or statistical guidance.">
 <meta name="author" content="">
 <link rel="canonical" href="http://localhost:1313/posts/synthesizer/">
 <link crossorigin="anonymous" href="/assets/css/stylesheet.b489a6d73b9d5f542e10296b5fbfe24c07a73618c7ca7efba908fadedc6200f9.css" integrity="sha256-tImm1zudX1QuEClrX7/iTAenNhjHyn77qQj63txiAPk=" rel="preload stylesheet" as="style">
@@ -49,19 +51,22 @@
   <header class="post-header">
     
     <h1 class="post-title entry-hint-parent">
-      Experiments in Program Synthesis
-      <span class="entry-hint" title="Draft">
-        <svg xmlns="http://www.w3.org/2000/svg" height="35" viewBox="0 -960 960 960" fill="currentColor">
-          <path
-            d="M160-410v-60h300v60H160Zm0-165v-60h470v60H160Zm0-165v-60h470v60H160Zm360 580v-123l221-220q9-9 20-13t22-4q12 0 23 4.5t20 13.5l37 37q9 9 13 20t4 22q0 11-4.5 22.5T862.09-380L643-160H520Zm300-263-37-37 37 37ZM580-220h38l121-122-18-19-19-18-122 121v38Zm141-141-19-18 37 37-18-19Z" />
-        </svg>
-      </span>
+      Building a Program Synthesizer
     </h1>
-    <div class="post-meta"><span title='2025-05-15 00:00:00 +0000 UTC'>May 15, 2025</span>&nbsp;·&nbsp;0 min
+    <div class="post-meta"><span title='2025-05-15 00:00:00 +0000 UTC'>May 15, 2025</span>&nbsp;·&nbsp;1 min
 
 </div>
   </header> 
 
+  <div class="post-content"><p>Program synthesis is an incredibly general, mostly futile, and deeply fascinating endeavor.</p>
+<p>As the name implies, it&rsquo;s the study of programs which generate (or synthesize) other programs, usually after having been given some formal requirements or sample data to draw from.</p>
+<p>Last year, as part of my university coursework, I decided to build an enumerative program synthesizer (see <a href="https://github.com/iacgm/kolmogorov">here</a>). That is, one which works via naive trial-and-error, possibly informed by programming language semantics and/or statistical guidance.</p>
+<p>In many settings, the search space of possible computer programs is too massive for this to work well (with some famous exceptions, such as Excel&rsquo;s autofill feature), but I took a simple idea and pushed it to an extreme, with more success than I had anticipated.</p>
+<p>The tool I built was an incredibly fun toy, and it let me play with different kinds of programming languages and see what they&rsquo;re capable of, which is often more than you might expect.</p>
+<p>If this sounds interesting to you, I encourage you to skim <a href="/synthesizer_report.pdf">my report</a> (or even to read it, at your own risk), especially chapters 3-6, but you can probably drop in and out at-will without getting too lost. It&rsquo;s shorter than it seems, and you might learn something new.</p>
+
+
+  </div>
 
   <footer class="post-footer">
     <ul class="post-tags">
