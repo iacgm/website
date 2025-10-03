@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="robots" content="noindex, nofollow">
-<title>C? Rewrite it in Brainfuck | iacgm</title>
+<title>C? Rewrite it in Brainfuck. | iacgm</title>
 <meta name="keywords" content="">
 <meta name="description" content="Doing Things Worst
 People always seem to want to do things well, and when they fail, they tend to blame their tools. So it should come as no surprise that programmers, being somewhat similar to people (and being generally bad at what they do), have a long tradition of growing near-religious zeal for editors, paradigms, code styles, and, of course, programming languages. The bickering never ends, and whatever one person preaches, another considers harmful.">
@@ -50,7 +50,7 @@ People always seem to want to do things well, and when they fail, they tend to b
   <header class="post-header">
     
     <h1 class="post-title entry-hint-parent">
-      C? Rewrite it in Brainfuck
+      C? Rewrite it in Brainfuck.
     </h1>
     <div class="post-meta"><span title='2025-10-01 00:00:00 +0000 UTC'>October 1, 2025</span>&nbsp;·&nbsp;13 min
 
@@ -252,6 +252,7 @@ To move a value from the top of the stack to a slot further down, we just clear 
 <p>Several projects (such as the one described <a href="https://www.bozidarevic.com/2019/12/transpiling-c-into-brainfuck/">here</a>) exist which can translate simple commands, and even loops, but do not support things like function calls. The linked article even goes so far as to describe the jumping trick I used, but says it&rsquo;d be too difficult to implement.</p>
 <p>The only ones I&rsquo;ve found which are as complete as mine are ones which do work, but are more like emulators written in Brainfuck than transpilers. That is, rather than translate the code directly, they act like virtual machines, putting instructions into memory and then executing each one independently, simulating traditional memory and registers. <a href="https://github.com/shinh/elvm">ELVM</a> is a project which targets many esolangs, but the BF implementation is essentially an emulator. Gregor Richards has <a href="https://esolangs.org/wiki/C2BF">another project</a> which is explicitly an emulator.</p>
 <p>There&rsquo;s nothing wrong with emulators, but I feel my approach gives more of a &ldquo;true&rdquo; translation (whatever that means), and the stack-based IR really is the secret ingredient for that. It&rsquo;s probably also much faster, since we just need to actually execute each instruction, as opposed to loading instructions from memory and dealing with program counters and registers and so on. I didn&rsquo;t benchmark them though, because my implementation is written in Rust, so no matter how slow it is, it&rsquo;s still blazingly fast.</p>
+<p>So go forth, prosper, and put Brainfuck in production. ;)</p>
 <div class="footnotes" role="doc-endnotes">
 <hr>
 <ol>

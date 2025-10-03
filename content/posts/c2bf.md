@@ -1,7 +1,7 @@
 ---
 date: '2025-10-01'
 draft: false
-title: 'C? Rewrite it in Brainfuck'
+title: 'C? Rewrite it in Brainfuck.'
 ---
 
 ## Doing Things Worst
@@ -259,3 +259,5 @@ Several projects (such as the one described [here](https://www.bozidarevic.com/2
 The only ones I've found which are as complete as mine are ones which do work, but are more like emulators written in Brainfuck than transpilers. That is, rather than translate the code directly, they act like virtual machines, putting instructions into memory and then executing each one independently, simulating traditional memory and registers. [ELVM](https://github.com/shinh/elvm) is a project which targets many esolangs, but the BF implementation is essentially an emulator. Gregor Richards has [another project](https://esolangs.org/wiki/C2BF) which is explicitly an emulator.
 
 There's nothing wrong with emulators, but I feel my approach gives more of a "true" translation (whatever that means), and the stack-based IR really is the secret ingredient for that. It's probably also much faster, since we just need to actually execute each instruction, as opposed to loading instructions from memory and dealing with program counters and registers and so on. I didn't benchmark them though, because my implementation is written in Rust, so no matter how slow it is, it's still blazingly fast.
+
+So go forth, prosper, and put Brainfuck in production. ;)
