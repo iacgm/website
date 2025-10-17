@@ -216,7 +216,7 @@ while (etiqueta != 0) {
 
 Implementar verificaciones de igualdad, bucles while-no-cero y sentencias condicionales en Brainfuck son problemas, si no fáciles, al menos manejables.
 
-En cuanto a las lecturas y escrituras de punteros, no intentaré explicarlas, más allá de enlazar este excelente artículo.
+En cuanto a las lecturas y escrituras de punteros, no intentaré explicarlas, más allá de enlazar este [excelente artículo](https://www.inshame.com/2008/02/efficient-brainfuck-tables.html).
 
 ### Optimización Local
 

@@ -16,13 +16,6 @@
       <description>C2BF: A C-to-Brainfuck Compiler.</description>
     </item>
     <item>
-      <title>Rule-Based Nurikabe Solver</title>
-      <link>http://localhost:1313/projects/nurikabe/</link>
-      <pubDate>Sat, 27 Sep 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/projects/nurikabe/</guid>
-      <description>A Logical Approach to Solving &amp;amp; Generating Nurikabe Puzzles.</description>
-    </item>
-    <item>
       <title>Building a Program Synthesizer</title>
       <link>http://localhost:1313/projects/synthesizer/</link>
       <pubDate>Thu, 15 May 2025 00:00:00 +0000</pubDate>
