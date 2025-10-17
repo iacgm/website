@@ -3,11 +3,52 @@ languageCode: en-us
 title: iacgm
 theme: ["PaperMod"]
 
+pagination:
+  disableAliases: false
+
+languages:
+  en:
+    languageName: "English"
+
+    menu:
+      main:
+        - name: RSS
+          url: index.xml
+        - name: Projects
+          url: projects/
+        - name: Search
+          url: search/
+
+  es:
+    languageName: "Español"
+
+    menu:
+      main:
+        - name: RSS
+          url: index.xml
+        - name: Proyectos
+          url: projects/
+        - name: Buscar
+          url: search/
+    
+    params:
+      homeInfoParams:
+        Title: Hola!
+        Content: >
+          Me llamo Ian y soy un programmador basado en Nueva York. Me interesan las matemáticas y la computación en general, pero especialmente la lógica y los lenguajes de programmación.
+
+outputs:
+  home:
+    - HTML
+    - RSS
+    - JSON
+
 params:
   showReadingTime: true
   showToc: true
   defaultTheme: dark
   disableThemeToggle: true
+  showPostNavLinks: true
 
   homeInfoParams:
     Title: Hello!
@@ -18,4 +59,6 @@ params:
     - name: github
       url: "https://github.com/iacgm"
     - name: email
-      url: "ian.graham28@gmail.com"
+      url: "mailto:iangrahammartinez@gmail.com"
+    - name: rss
+      url: "index.xml"

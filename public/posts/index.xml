@@ -5,7 +5,7 @@
     <link>http://localhost:1313/posts/</link>
     <description>Recent content in Posts on iacgm</description>
     <generator>Hugo -- 0.150.1</generator>
-    <language>en-us</language>
+    <language>en</language>
     <lastBuildDate>Wed, 01 Oct 2025 00:00:00 +0000</lastBuildDate>
     <atom:link href="http://localhost:1313/posts/index.xml" rel="self" type="application/rss+xml" />
     <item>
@@ -13,17 +13,21 @@
       <link>http://localhost:1313/posts/c2bf/</link>
       <pubDate>Wed, 01 Oct 2025 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/posts/c2bf/</guid>
-      <description>&lt;h2 id=&#34;doing-things-worst&#34;&gt;Doing Things Worst&lt;/h2&gt;
-&lt;p&gt;People always seem to want to do things well, and when they fail, they tend to blame their tools. So it should come as no surprise that programmers, being somewhat similar to people (and being generally bad at what they do), have a long tradition of growing near-religious zeal for editors, paradigms, code styles, and, of course, programming languages. The bickering never ends, and whatever one person preaches, another &lt;a href=&#34;https://en.wikipedia.org/wiki/Considered_harmful&#34;&gt;considers harmful&lt;/a&gt;.&lt;/p&gt;</description>
+      <description>C2BF: A C-to-Brainfuck Compiler.</description>
+    </item>
+    <item>
+      <title>Rule-Based Nurikabe Solver</title>
+      <link>http://localhost:1313/posts/nurikabe/</link>
+      <pubDate>Sat, 27 Sep 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/nurikabe/</guid>
+      <description>A Logical Approach to Solving &amp;amp; Generating Nurikabe Puzzles.</description>
     </item>
     <item>
       <title>Building a Program Synthesizer</title>
       <link>http://localhost:1313/posts/synthesizer/</link>
       <pubDate>Thu, 15 May 2025 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/posts/synthesizer/</guid>
-      <description>&lt;p&gt;Program synthesis is an incredibly general, mostly futile, and deeply fascinating endeavor.&lt;/p&gt;
-&lt;p&gt;As the name implies, it&amp;rsquo;s the study of programs which generate (or synthesize) other programs, usually after having been given some formal requirements or sample data to draw from.&lt;/p&gt;
-&lt;p&gt;Last year, as part of my university coursework, I decided to build an enumerative program synthesizer (see &lt;a href=&#34;https://github.com/iacgm/kolmogorov&#34;&gt;here&lt;/a&gt;). That is, one which works via naive trial-and-error, possibly informed by programming language semantics and/or statistical guidance.&lt;/p&gt;</description>
+      <description>Design &amp;amp; Implementation of an Program Synthesizer</description>
     </item>
   </channel>
 </rss>

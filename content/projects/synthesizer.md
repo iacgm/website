@@ -2,9 +2,10 @@
 date: '2025-05-15'
 draft: false
 title: 'Building a Program Synthesizer'
+summary: Design & Implementation of an Program Synthesizer
 ---
 
-Program synthesis is an incredibly general, mostly futile, and deeply fascinating endeavor. 
+Program synthesis is an ill-defined, mostly futile, and deeply fascinating endeavor. 
 
 As the name implies, it's the study of programs which generate (or synthesize) other programs, usually after having been given some formal requirements or sample data to draw from.
 
@@ -14,4 +15,4 @@ In many settings, the search space of possible computer programs is too massive 
 
 The tool I built was an incredibly fun toy, and it let me play with different kinds of programming languages and see what they're capable of, which is often more than you might expect.
 
-If this sounds interesting to you, I encourage you to skim [my report](/synthesizer_report.pdf) (or even to read it, at your own risk), especially chapters 3-6, but you can probably drop in and out at-will without getting too lost. It's shorter than it seems, and you might learn something new.
+If this sounds interesting to you, I encourage you to skim [my report](/synthesizer_report.pdf) (or even to read it, at your own risk), especially chapters 3-6, but you can probably drop in and out at-will without getting too lost.

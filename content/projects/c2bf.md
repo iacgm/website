@@ -2,6 +2,8 @@
 date: '2025-10-01'
 draft: false
 title: 'C? Rewrite it in Brainfuck.'
+summary: "C2BF: A C-to-Brainfuck Compiler."
+aliases: ["/posts/c2bf"]
 ---
 
 ## Doing Things Worst
@@ -18,7 +20,7 @@ It is exactly how Boris Marshalov described Congress: "A man gets up to speak an
 
 But then, miraculously, from the heavens above, we hear the wise, booming voices of [Church and Turing](https://en.wikipedia.org/wiki/Church%E2%80%93Turing_thesis) in unison, bringing clarity through the noise: "It simply does not matter", they say, "In good hands, they are all equivalent."
 
-But what if you're not the sort of person who wants to do things well? What if you're the sort of person who wants to things bad? What if you want to do things _worst_?
+But what if you're not the sort of person who wants to do things well? What if you're the sort of person who wants to things bad? What if you want to do things **_worst_**?
 
 In that case, you might have something in common with Urban Müller, who in 1993[^Bohm], presumably unable to accept the Church-Turing doctrine, created Brainfuck, a language so heinous that no other name could do it justice. With only 8 instructions and with no support for variables, functions, random access memory, datatypes, fractional arithmetic, memory allocation, or any conventional control flow (!), surely _this_ abomination could not be compared to (say) C, the digital world's lingua franca, used on damn near every device of the last half-century. 
 
@@ -155,7 +157,7 @@ Notice that, while these instructions take arguments, they are all constants. We
 
 ### Translation into Brainfuck
 
-The stack-based IR is especially nice because Brainfuck's semantics basically provide us with a stack already, in the form of its tape. We can think of the tape head as pointing to the top of the stack and the cells to the head's left as the values on the stack. We should be careful to keep cells to the right of the tape head empty, so that we can use those cells as-needed. With this aproach, translating our first few instructions is a breeze. For example:
+The stack-based IR is especially nice because Brainfuck's semantics basically provide us with a stack already, in the form of its tape. We can think of the tape head as pointing to the top of the stack and the cells to the head's left as the values on the stack. We should be careful to keep cells to the right of the tape head empty, so that we can use those cells as-needed. With this approach, translating our first few instructions is a breeze. For example:
 
 1. `Push(5)`: `>+++++`  
 We just move the tape head and increment the new cell 5 times.
@@ -210,7 +212,7 @@ I've skipped over all sorts of caveats and minutiae, for example, the details of
 
 ### Peephole optimization
 
-While the above steps does let us compile working Brainfuck programs, they aren't close to optimal. Just looking at a snippet of our donut.bf code, we see all sorts of suboptimal code:
+While the above steps do let us compile working Brainfuck programs, they aren't close to optimal. Just looking at a snippet of our donut.bf code, we see all sorts of suboptimal code:
 
 ```brainfuck
 +<[[-]>-<]>[-<+>]<[-<[-]<>>+>+++++++++++++++[-<[->>+>+<<<]>>[-<<
@@ -247,7 +249,7 @@ Some major missing features are:
 - Support for variadic functions (including `printf`).
 - Standard library functions more generally.
 - Differently-sized types (apart from arrays). Most Brainfuck interpreters use 1-byte cells. Mine uses 2-byte cells so they are large enough to store the labels to be jumped to, and so that I could have enough precision to implement usable fixed-point arithmetic.
-- Switch statements. No excuse here, just got a bit lazy.
+- `switch` statements. No excuse here, just got a bit lazy.
 - Memory allocation / variable length arrays. This would be a complicated addition to make, since we would have to change how we access global variables, but it would not be far out of reach.
 
 ## Similar Projects
@@ -260,4 +262,4 @@ The only ones I've found which are as complete as mine are ones which do work, b
 
 There's nothing wrong with emulators, but I feel my approach gives more of a "true" translation (whatever that means), and the stack-based IR really is the secret ingredient for that. It's probably also much faster, since we just need to actually execute each instruction, as opposed to loading instructions from memory and dealing with program counters and registers and so on. I didn't benchmark them though, because my implementation is written in Rust, so no matter how slow it is, it's still blazingly fast.
 
-So go forth, prosper, and put Brainfuck in production. ;)
+So go forth, prosper, and put Brainfuck in production ;)
