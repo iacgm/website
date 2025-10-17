@@ -1,9 +1,8 @@
 ---
 date: '2025-10-01'
 draft: false
-title: 'C? Reescríbelo it in Brainfuck.'
+title: '¿C? Reescríbelo in Brainfuck.'
 summary: "C2BF: Un Compilador de C a Brainfuck."
-aliases: ["/posts/c2bf"]
 ---
 
 Haciendo las cosas peor
