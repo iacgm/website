@@ -1,11 +1,11 @@
 ---
 date: '2025-10-01'
 draft: false
-title: '¿C? Reescríbelo in Brainfuck.'
+title: '¿C? Reescríbelo en Brainfuck.'
 summary: "C2BF: Un Compilador de C a Brainfuck."
 ---
 
-Haciendo las cosas peor
+Haciendo las Cosas Peor
 
 La gente siempre parece querer hacer las cosas bien, y cuando fracasa, tiende a culpar a sus herramientas. Así que no debería sorprender que los programadores, siendo algo parecidos a las personas (y generalmente malos en lo que hacen), tengan una larga tradición de desarrollar un celo casi religioso por editores, paradigmas, estilos de código y, por supuesto, lenguajes de programación. Las discusiones nunca terminan, y lo que uno predica, otro [lo considera dañino](https://en.wikipedia.org/wiki/Considered_harmful).
 
@@ -18,7 +18,7 @@ La gente siempre parece querer hacer las cosas bien, y cuando fracasa, tiende a 
 Es exactamente como Boris Marshalov describía al Congreso Estadounidense:
 "Un hombre se levanta para hablar y no dice nada. Nadie escucha—y luego todos están en desacuerdo."
 
-Pero derepente, milagrosamente, desde los cielos, oímos las voces sabias y atronadoras de [Church y Turing](https://es.wikipedia.org/wiki/Tesis_de_Church-Turing) al unísono, trayendo claridad en medio del ruido:
+Pero de repente, milagrosamente, desde los cielos, oímos las voces sabias y atronadoras de [Church y Turing](https://es.wikipedia.org/wiki/Tesis_de_Church-Turing) al unísono, trayendo claridad en medio del ruido:
 "Simplemente no importa", dicen, "En buenas manos, todos son equivalentes."
 
 Pero, ¿y si no eres el tipo de persona que quiere hacer las cosas bien? ¿Y si eres del tipo que quiere hacerlas mal? ¿Y si quieres hacer las cosas **_peor_**?
@@ -40,7 +40,7 @@ Pero no puedes programar cualquier cosa que quieras en Brainfuck, porque Brainfu
 Pero **_yo_** sí.
 
 **_Yo_** sí puedo hacer casi cualquier cosa que quiera en Brainfuck.
-Por ejemplo, considera [esta creación reciente mía en Brainfuck](/donut.bf), que muestra una animación de una dona girando:
+Por ejemplo, considera [esta creación mía reciente en Brainfuck](/donut.bf), que muestra una animación de una dona girando:
 
 ![ASCII Donut](/donut.png#center)
 
@@ -176,7 +176,7 @@ El IR basado en pila es especialmente conveniente porque la semántica de Brainf
 
 4. `GoTo`: Mmm... Aunque las operaciones aritméticas básicas pueden implementarse con traducciones directas[^translations], implementar los saltos necesarios para el flujo de control general (o para punteros a función) es más complicado.
 
-[^translations]: "Directo" no significa "simple"; intenta implementar operaciones bit a bit sin multiplicación o división. Incluso las comparaciones de números sin signo son altamente complejas. Si te interesa, puedes consultar [estos recursos](https://esolangs.org/wiki/Brainfuck_algorithms) como inspiración.
+[^translations]: "Directo" no significa "simple"; intenta implementar operaciones bit a bit sin multiplicación o división. Incluso las comparaciones de números sin signo son altamente complejas. Si te interesa, puedes consultar [estos ejemplos](https://esolangs.org/wiki/Brainfuck_algorithms) como inspiración.
 
 Nuevamente, te animo a detenerte y reflexionar sobre esto. Es otro rompecabezas interesante.
 

@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="robots" content="noindex, nofollow">
-<title>C? Reescribelo it in Brainfuck. | iacgm</title>
+<title>¿C? Reescríbelo en Brainfuck. | iacgm</title>
 <meta name="keywords" content="">
 <meta name="description" content="C2BF: Un Compilador de C a Brainfuck.">
 <meta name="author" content="">
@@ -18,8 +18,18 @@
 <link rel="mask-icon" href="http://localhost:1313/safari-pinned-tab.svg">
 <meta name="theme-color" content="#2e2e33">
 <meta name="msapplication-TileColor" content="#2e2e33">
-<link rel="alternate" hreflang="es" href="http://localhost:1313/es/projects/c2bf/">
 <link rel="alternate" hreflang="en" href="http://localhost:1313/projects/c2bf/">
+<link rel="alternate" hreflang="es" href="http://localhost:1313/es/projects/c2bf/">
+
+<script>
+    (function(w,d,e,u,f,l,n){w[f]=w[f]||function(){(w[f].q=w[f].q||[])
+    .push(arguments);},l=d.createElement(e),l.async=1,l.src=u,
+    n=d.getElementsByTagName(e)[0],n.parentNode.insertBefore(l,n);})
+    (window,document,'script','https://assets.mailerlite.com/js/universal.js','ml');
+    ml('account', '1864484');
+</script>
+
+
 <noscript>
     <style>
         #theme-toggle,
@@ -71,7 +81,7 @@
   <header class="post-header">
     
     <h1 class="post-title entry-hint-parent">
-      C? Reescribelo it in Brainfuck.
+      ¿C? Reescríbelo en Brainfuck.
     </h1>
     <div class="post-meta"><span title='2025-10-01 00:00:00 +0000 UTC'>1 de octubre de 2025</span>&nbsp;·&nbsp;13 min&nbsp;|&nbsp;Traducciones:
 <ul class="i18n_list">
@@ -112,7 +122,7 @@
     </details>
 </div>
 
-  <div class="post-content"><p>Haciendo las cosas peor</p>
+  <div class="post-content"><p>Haciendo las Cosas Peor</p>
 <p>La gente siempre parece querer hacer las cosas bien, y cuando fracasa, tiende a culpar a sus herramientas. Así que no debería sorprender que los programadores, siendo algo parecidos a las personas (y generalmente malos en lo que hacen), tengan una larga tradición de desarrollar un celo casi religioso por editores, paradigmas, estilos de código y, por supuesto, lenguajes de programación. Las discusiones nunca terminan, y lo que uno predica, otro <a href="https://en.wikipedia.org/wiki/Considered_harmful">lo considera dañino</a>.</p>
 <ul>
 <li>
@@ -127,7 +137,7 @@
 </ul>
 <p>Es exactamente como Boris Marshalov describía al Congreso Estadounidense:
 &ldquo;Un hombre se levanta para hablar y no dice nada. Nadie escucha—y luego todos están en desacuerdo.&rdquo;</p>
-<p>Pero derepente, milagrosamente, desde los cielos, oímos las voces sabias y atronadoras de <a href="https://es.wikipedia.org/wiki/Tesis_de_Church-Turing">Church y Turing</a> al unísono, trayendo claridad en medio del ruido:
+<p>Pero de repente, milagrosamente, desde los cielos, oímos las voces sabias y atronadoras de <a href="https://es.wikipedia.org/wiki/Tesis_de_Church-Turing">Church y Turing</a> al unísono, trayendo claridad en medio del ruido:
 &ldquo;Simplemente no importa&rdquo;, dicen, &ldquo;En buenas manos, todos son equivalentes.&rdquo;</p>
 <p>Pero, ¿y si no eres el tipo de persona que quiere hacer las cosas bien? ¿Y si eres del tipo que quiere hacerlas mal? ¿Y si quieres hacer las cosas <strong><em>peor</em></strong>?</p>
 <p>En ese caso, podrías tener algo en común con Urban Müller, quien en 1993<sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup>, presumiblemente incapaz de aceptar la doctrina de Church-Turing, creó <strong>Brainfuck</strong>, un lenguaje tan atroz que ningún otro nombre podría hacerle justicia. Con sólo 8 instrucciones y sin soporte para variables, funciones, memoria de acceso aleatorio, tipos de datos, aritmética fraccional, gestión de memoria ni ningún tipo de flujo de control convencional (!), seguramente <em>esta</em> abominación no podría compararse con (digamos) C, la &ldquo;lingua franca&rdquo; del mundo digital, usada en casi todos los dispositivos de los últimos 50 años.</p>
@@ -138,7 +148,7 @@
 Pero no puedes programar cualquier cosa que quieras en Brainfuck, porque Brainfuck es difícil, y tú no eres tan listo.</p>
 <p>Pero <strong><em>yo</em></strong> sí.</p>
 <p><strong><em>Yo</em></strong> sí puedo hacer casi cualquier cosa que quiera en Brainfuck.
-Por ejemplo, considera <a href="/donut.bf">esta creación reciente mía en Brainfuck</a>, que muestra una animación de una dona girando:</p>
+Por ejemplo, considera <a href="/donut.bf">esta creación mía reciente en Brainfuck</a>, que muestra una animación de una dona girando:</p>
 <p><img alt="ASCII Donut" loading="lazy" src="/donut.png#center"></p>
 <p>Si esto te resulta familiar, es porque es una versión (ligeramente modificada) del famoso programa en C de Andy Sloane, <a href="https://www.a1k0n.net/2011/07/20/donut-math.html">donut.c</a>, traducido a Brainfuck.</p>
 <p>No, no escribí yo mismo las 125,489 instrucciones de esto. Sino, pasé 6 semanas creando <a href="https://github.com/iacgm/c2bf">un compilador de C a Brainfuck</a>, y luego modifiqué donut.c para que utilice aritmética de punto fijo de muy baja precisión.</p>
@@ -308,7 +318,7 @@ No, realmente no me importa.</p>
 <p>Recomendaría encarecidamente a cualquiera que no lo haya hecho que examine detenidamente la gramática de C, o que al menos consulte la referencia de Microsoft sobre C (o el Estándar de C, aunque esto no es para los débiles de corazón). C está lleno de peculiaridades interesantes que de otro modo podrías nunca encontrar, y si hay algo que construir un compilador te obliga a hacer, es a aprender tu lenguaje de verdad, de manera profunda.&#160;<a href="#fnref:2" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
 <li id="fn:3">
-<p>&ldquo;Directo&rdquo; no significa &ldquo;simple&rdquo;; intenta implementar operaciones bit a bit sin multiplicación o división. Incluso las comparaciones de números sin signo son altamente complejas. Si te interesa, puedes consultar <a href="https://esolangs.org/wiki/Brainfuck_algorithms">estos recursos</a> como inspiración.&#160;<a href="#fnref:3" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+<p>&ldquo;Directo&rdquo; no significa &ldquo;simple&rdquo;; intenta implementar operaciones bit a bit sin multiplicación o división. Incluso las comparaciones de números sin signo son altamente complejas. Si te interesa, puedes consultar <a href="https://esolangs.org/wiki/Brainfuck_algorithms">estos ejemplos</a> como inspiración.&#160;<a href="#fnref:3" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
 <li id="fn:4">
 <p>Para poder hacer esto de forma segura, debemos asegurarnos de que siempre que veamos el código para una operación bit a bit (por ejemplo), realmente solo calcule un valor, sin efectos secundarios. Esto significa que debemos estar seguros de que todas las celdas de memoria que ese fragmento de código podría leer tienen los valores que esperamos. Podemos lograr esto haciendo que estas instrucciones limpien toda la memoria que necesiten antes de utilizar cualquier parte de ella.&#160;<a href="#fnref:4" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
@@ -321,7 +331,7 @@ No, realmente no me importa.</p>
 
   <footer class="post-footer">
     <ul class="post-tags">
-    </ul>
+    </ul><div class="ml-embedded" data-form="hp55Js"></div>
 
   </footer>
 </article>
