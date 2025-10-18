@@ -2,85 +2,85 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>http://localhost:54250/projects/c2bf/</loc>
+    <loc>http://localhost:59786/projects/c2bf/</loc>
     <lastmod>2025-10-01T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="es"
-                href="http://localhost:54250/es/projects/c2bf/"
+                href="http://localhost:59786/es/projects/c2bf/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="http://localhost:54250/projects/c2bf/"
+                href="http://localhost:59786/projects/c2bf/"
                 />
   </url><url>
-    <loc>http://localhost:54250/</loc>
+    <loc>http://localhost:59786/</loc>
     <lastmod>2025-10-01T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="es"
-                href="http://localhost:54250/es/"
+                href="http://localhost:59786/es/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="http://localhost:54250/"
+                href="http://localhost:59786/"
                 />
   </url><url>
-    <loc>http://localhost:54250/projects/</loc>
+    <loc>http://localhost:59786/projects/</loc>
     <lastmod>2025-10-01T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="es"
-                href="http://localhost:54250/es/projects/"
+                href="http://localhost:59786/es/projects/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="http://localhost:54250/projects/"
+                href="http://localhost:59786/projects/"
                 />
   </url><url>
-    <loc>http://localhost:54250/projects/nurikabe/</loc>
+    <loc>http://localhost:59786/projects/nurikabe/</loc>
     <lastmod>2025-09-27T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:54250/projects/synthesizer/</loc>
+    <loc>http://localhost:59786/projects/synthesizer/</loc>
     <lastmod>2025-05-15T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:54250/categories/</loc>
+    <loc>http://localhost:59786/categories/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="es"
-                href="http://localhost:54250/es/categories/"
+                href="http://localhost:59786/es/categories/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="http://localhost:54250/categories/"
+                href="http://localhost:59786/categories/"
                 />
   </url><url>
-    <loc>http://localhost:54250/search/</loc>
+    <loc>http://localhost:59786/search/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="es"
-                href="http://localhost:54250/es/search/"
+                href="http://localhost:59786/es/search/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="http://localhost:54250/search/"
+                href="http://localhost:59786/search/"
                 />
   </url><url>
-    <loc>http://localhost:54250/tags/</loc>
+    <loc>http://localhost:59786/tags/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="es"
-                href="http://localhost:54250/es/tags/"
+                href="http://localhost:59786/es/tags/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="http://localhost:54250/tags/"
+                href="http://localhost:59786/tags/"
                 />
   </url>
 </urlset>

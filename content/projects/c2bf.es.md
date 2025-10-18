@@ -5,7 +5,7 @@ title: '¿C? Reescríbelo en Brainfuck.'
 summary: "C2BF: Un Compilador de C a Brainfuck."
 ---
 
-Haciendo las Cosas Peor
+## Haciendo las Cosas Peor
 
 La gente siempre parece querer hacer las cosas bien, y cuando fracasa, tiende a culpar a sus herramientas. Así que no debería sorprender que los programadores, siendo algo parecidos a las personas (y generalmente malos en lo que hacen), tengan una larga tradición de desarrollar un celo casi religioso por editores, paradigmas, estilos de código y, por supuesto, lenguajes de programación. Las discusiones nunca terminan, y lo que uno predica, otro [lo considera dañino](https://en.wikipedia.org/wiki/Considered_harmful).
 

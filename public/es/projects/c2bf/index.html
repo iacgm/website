@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="es" dir="auto">
 
-<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=54250&amp;path=livereload" data-no-instant defer></script><meta charset="utf-8">
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="robots" content="noindex, nofollow">
@@ -9,17 +9,17 @@
 <meta name="keywords" content="">
 <meta name="description" content="C2BF: Un Compilador de C a Brainfuck.">
 <meta name="author" content="">
-<link rel="canonical" href="http://localhost:54250/es/projects/c2bf/">
+<link rel="canonical" href="http://localhost:1313/es/projects/c2bf/">
 <link crossorigin="anonymous" href="/assets/css/stylesheet.b489a6d73b9d5f542e10296b5fbfe24c07a73618c7ca7efba908fadedc6200f9.css" integrity="sha256-tImm1zudX1QuEClrX7/iTAenNhjHyn77qQj63txiAPk=" rel="preload stylesheet" as="style">
-<link rel="icon" href="http://localhost:54250/favicon.ico">
-<link rel="icon" type="image/png" sizes="16x16" href="http://localhost:54250/favicon-16x16.png">
-<link rel="icon" type="image/png" sizes="32x32" href="http://localhost:54250/favicon-32x32.png">
-<link rel="apple-touch-icon" href="http://localhost:54250/apple-touch-icon.png">
-<link rel="mask-icon" href="http://localhost:54250/safari-pinned-tab.svg">
+<link rel="icon" href="http://localhost:1313/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="http://localhost:1313/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="http://localhost:1313/favicon-32x32.png">
+<link rel="apple-touch-icon" href="http://localhost:1313/apple-touch-icon.png">
+<link rel="mask-icon" href="http://localhost:1313/safari-pinned-tab.svg">
 <meta name="theme-color" content="#2e2e33">
 <meta name="msapplication-TileColor" content="#2e2e33">
-<link rel="alternate" hreflang="en" href="http://localhost:54250/projects/c2bf/">
-<link rel="alternate" hreflang="es" href="http://localhost:54250/es/projects/c2bf/">
+<link rel="alternate" hreflang="en" href="http://localhost:1313/projects/c2bf/">
+<link rel="alternate" hreflang="es" href="http://localhost:1313/es/projects/c2bf/">
 <noscript>
     <style>
         #theme-toggle,
@@ -45,11 +45,11 @@
 <header class="header">
     <nav class="nav">
         <div class="logo">
-            <a href="http://localhost:54250/es/" accesskey="h" title="iacgm (Alt + H)">iacgm</a>
+            <a href="http://localhost:1313/es/" accesskey="h" title="iacgm (Alt + H)">iacgm</a>
             <div class="logo-switches">
                 <ul class="lang-switch"><li>|</li>
                     <li>
-                        <a href="http://localhost:54250/" title="English"
+                        <a href="http://localhost:1313/" title="English"
                             aria-label="English">En</a>
                     </li>
                 </ul>
@@ -57,17 +57,17 @@
         </div>
         <ul id="menu">
             <li>
-                <a href="http://localhost:54250/es/search/" title="Buscar">
+                <a href="http://localhost:1313/es/search/" title="Buscar">
                     <span>Buscar</span>
                 </a>
             </li>
             <li>
-                <a href="http://localhost:54250/es/projects/" title="Proyectos">
+                <a href="http://localhost:1313/es/projects/" title="Proyectos">
                     <span>Proyectos</span>
                 </a>
             </li>
             <li>
-                <a href="http://localhost:54250/es/index.xml" title="RSS">
+                <a href="http://localhost:1313/es/index.xml" title="RSS">
                     <span>RSS</span>
                 </a>
             </li>
@@ -85,7 +85,7 @@
     <div class="post-meta"><span title='2025-10-01 00:00:00 +0000 UTC'>1 de octubre de 2025</span>&nbsp;·&nbsp;13 min&nbsp;|&nbsp;Traducciones:
 <ul class="i18n_list">
     <li>
-        <a href="http://localhost:54250/projects/c2bf/">En</a>
+        <a href="http://localhost:1313/projects/c2bf/">En</a>
     </li>
 </ul>
 
@@ -97,6 +97,8 @@
         </summary>
 
         <div class="inner"><ul>
+                <li>
+                    <a href="#haciendo-las-cosas-peor" aria-label="Haciendo las Cosas Peor">Haciendo las Cosas Peor</a></li>
                 <li>
                     <a href="#sem%c3%a1ntica-de-brainfuck" aria-label="Semántica de Brainfuck">Semántica de Brainfuck</a></li>
                 <li>
@@ -121,7 +123,7 @@
     </details>
 </div>
 
-  <div class="post-content"><p>Haciendo las Cosas Peor</p>
+  <div class="post-content"><h2 id="haciendo-las-cosas-peor">Haciendo las Cosas Peor<a hidden class="anchor" aria-hidden="true" href="#haciendo-las-cosas-peor">#</a></h2>
 <p>La gente siempre parece querer hacer las cosas bien, y cuando fracasa, tiende a culpar a sus herramientas. Así que no debería sorprender que los programadores, siendo algo parecidos a las personas (y generalmente malos en lo que hacen), tengan una larga tradición de desarrollar un celo casi religioso por editores, paradigmas, estilos de código y, por supuesto, lenguajes de programación. Las discusiones nunca terminan, y lo que uno predica, otro <a href="https://en.wikipedia.org/wiki/Considered_harmful">lo considera dañino</a>.</p>
 <ul>
 <li>
@@ -330,14 +332,15 @@ No, realmente no me importa.</p>
 
   <footer class="post-footer">
     <ul class="post-tags">
-    </ul>
+    </ul><div class="ml-embedded" data-form="hp55Js"></div>
+
 
   </footer>
 </article>
     </main>
     
 <footer class="footer">
-        <span>&copy; 2025 <a href="http://localhost:54250/es/">iacgm</a></span> · 
+        <span>&copy; 2025 <a href="http://localhost:1313/es/">iacgm</a></span> · 
 
     <span>
         Powered by
@@ -349,8 +352,7 @@ No, realmente no me importa.</p>
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
         <path d="M12 6H0l6-6z" />
     </svg>
-</a><div class="ml-embedded" data-form="hp55Js"></div>
-
+</a>
 
 <script>
     let menu = document.getElementById('menu')

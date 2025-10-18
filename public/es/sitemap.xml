@@ -2,79 +2,79 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>http://localhost:54250/es/projects/c2bf/</loc>
+    <loc>http://localhost:59786/es/projects/c2bf/</loc>
     <lastmod>2025-10-01T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="http://localhost:54250/projects/c2bf/"
+                href="http://localhost:59786/projects/c2bf/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="es"
-                href="http://localhost:54250/es/projects/c2bf/"
+                href="http://localhost:59786/es/projects/c2bf/"
                 />
   </url><url>
-    <loc>http://localhost:54250/es/</loc>
+    <loc>http://localhost:59786/es/</loc>
     <lastmod>2025-10-01T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="http://localhost:54250/"
+                href="http://localhost:59786/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="es"
-                href="http://localhost:54250/es/"
+                href="http://localhost:59786/es/"
                 />
   </url><url>
-    <loc>http://localhost:54250/es/projects/</loc>
+    <loc>http://localhost:59786/es/projects/</loc>
     <lastmod>2025-10-01T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="http://localhost:54250/projects/"
+                href="http://localhost:59786/projects/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="es"
-                href="http://localhost:54250/es/projects/"
+                href="http://localhost:59786/es/projects/"
                 />
   </url><url>
-    <loc>http://localhost:54250/es/search/</loc>
+    <loc>http://localhost:59786/es/search/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="http://localhost:54250/search/"
+                href="http://localhost:59786/search/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="es"
-                href="http://localhost:54250/es/search/"
+                href="http://localhost:59786/es/search/"
                 />
   </url><url>
-    <loc>http://localhost:54250/es/categories/</loc>
+    <loc>http://localhost:59786/es/categories/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="http://localhost:54250/categories/"
+                href="http://localhost:59786/categories/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="es"
-                href="http://localhost:54250/es/categories/"
+                href="http://localhost:59786/es/categories/"
                 />
   </url><url>
-    <loc>http://localhost:54250/es/tags/</loc>
+    <loc>http://localhost:59786/es/tags/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="http://localhost:54250/tags/"
+                href="http://localhost:59786/tags/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="es"
-                href="http://localhost:54250/es/tags/"
+                href="http://localhost:59786/es/tags/"
                 />
   </url>
 </urlset>
