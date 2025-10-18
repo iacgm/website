@@ -10,15 +10,6 @@ languages:
   en:
     languageName: "English"
 
-    menu:
-      main:
-        - name: RSS
-          url: index.xml
-        - name: Projects
-          url: projects/
-        - name: Search
-          url: search/
-
   es:
     languageName: "Español"
 
@@ -32,10 +23,24 @@ languages:
           url: search/
     
     params:
+      showReadingTime: true
+      showToc: true
+      defaultTheme: dark
+      disableThemeToggle: true
+      showPostNavLinks: true
+
       homeInfoParams:
         Title: Hola!
         Content: >
           Me llamo Ian y soy un programmador basado en Nueva York. Me interesan las matemáticas y la computación en general, pero especialmente la lógica y los lenguajes de programmación.
+menu:
+  main:
+    - name: RSS
+      url: index.xml
+    - name: Projects
+      url: projects/
+    - name: Search
+      url: search/
 
 outputs:
   home:
