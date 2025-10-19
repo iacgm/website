@@ -4,8 +4,6 @@ draft: false
 title: 'C? Rewrite it in Brainfuck.'
 summary: "C2BF: A C-to-Brainfuck Compiler."
 aliases: ["/posts/c2bf"]
-cover:
-  image: "/donut.png"
 ---
 
 ## Doing Things Worst
