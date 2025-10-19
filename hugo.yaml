@@ -3,6 +3,11 @@ languageCode: en-us
 title: iacgm
 theme: ["PaperMod"]
 
+markup:
+  goldmark:
+    renderer:
+      unsafe: true
+
 pagination:
   disableAliases: false
 
