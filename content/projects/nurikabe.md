@@ -3,6 +3,8 @@ date: '2025-10-18'
 draft: false
 title: 'Solving & Generating Nurikabe Puzzles'
 summary: A Step-by-Step Approach
+cover:
+  image: "/nurikabe4.png"
 ---
 
 Nurikabe was invented by the company best known for popularizing Sudoku, but is, at least in my view, a much better puzzle. At the very least, it is probably a [much harder one](https://cstheory.stackexchange.com/a/5814).
@@ -53,11 +55,12 @@ The full list of rules can be found [here](https://github.com/iacgm/nurikabe/tre
 
 1. If we detect a 'contradiction', we immediately start backtracking. These contradictions can look like:
    - A 2x2 pool.
-   - A sea tile which is unreachable from a sea tile (so that the sea can never be made contiguous).
+   - A sea tile which is unreachable from another sea tile (so that the sea can never be made contiguous).
    - An island without enough space to reach its size.
 2. If an island is complete, we surround it with water.
 3. If we detect an L-corner, we fill in the corner space with land.
-4. If an incomplete island (or sea) can only be extended in one direction, we do so.
+4. If an incomplete island (or sea region) can be extended in only one direction, we do so.
+
 
 <figure style="display:flex">
     <div style="margin:0 auto">
@@ -155,7 +158,7 @@ Each of the above steps may fail, so we need to limit how many times we try each
 
 ## Results
 
-We have a lot of dials to turn to customize our process: the size of our board, the average island size, how many times we try relabelling our board, what solving rules we use throughout the generation, etc...
+We have a lot of dials to turn to customize our process: the size of our board, the average island size, how many times we try relabelling our board, what solving rules we use throughout the generation process, etc...
 
 On the whole, things get tough if we try to generate boards much larger than a 12x12. I benchmarked the results of generating a 14x10 grid with small islands (max size 5, mean size 2), and got a mean generation time of 12s and a standard deviation of 10s. Could definitely be worse.
 
@@ -171,5 +174,5 @@ I was also really impressed by [this solver/generator](https://www.kakuro-online
 
 However, from a human perspective, its puzzles can hardly be called easy, and its algorithm looks like a simpler, faster version of mine: phase 1 is similar but randomly places the sea instead of the islands, phase 2 is done deterministically, instead of randomly, and phase 3 just adds and removes walls randomly. 
 
-Maybe all of this is a lesson about Occam's razor and avoiding overengineering, or maybe it's a sign to switch to Javascript. Who knows...
+Maybe all of this is a lesson about Occam's razor and avoiding overengineering, or maybe it's a sign to switch to Javascript. Who can say...
 

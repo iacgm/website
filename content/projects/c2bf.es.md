@@ -3,6 +3,8 @@ date: '2025-10-01'
 draft: false
 title: '¿C? Reescríbelo en Brainfuck.'
 summary: "C2BF: Un Compilador de C a Brainfuck."
+cover:
+  image: "/donut.png"
 ---
 
 ## Haciendo las Cosas Peor
