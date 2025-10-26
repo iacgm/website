@@ -1,6 +1,6 @@
 ---
 date: '2025-10-24'
-draft: true
+draft: false
 title: 'Lists are Geometric Series'
 summary: 'Taylor Expansions of Recursive Data Types'
 ---
