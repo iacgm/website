@@ -3,8 +3,22 @@ languageCode: en-us
 title: iacgm
 theme: ["PaperMod"]
 
+mainsections: ["projects", "articles"]
+
 markup:
   goldmark:
+    extensions:
+      passthrough:
+        delimiters:
+          block:
+          - - '\['
+            - '\]'
+          - - $$
+            - $$
+          inline:
+          - - '\('
+            - '\)'
+        enable: true
     renderer:
       unsafe: true
 
@@ -46,6 +60,8 @@ menu:
       url: projects/
     - name: Search
       url: search/
+    - name: Articles
+      url: articles/
 
 outputs:
   home:
@@ -54,6 +70,7 @@ outputs:
     - JSON
 
 params:
+  math: true
   showReadingTime: true
   showToc: true
   defaultTheme: dark
