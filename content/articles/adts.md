@@ -102,7 +102,7 @@ These are the [Catalan Numbers](https://oeis.org/A000108), and indeed, there is 
 
 [^admit]: Admittedly, it's not clear that these expansions are correct, but they follow from the recurrence \(C_{n+1} = \sum_{i=0}^n C_i C_{n-i}\).
 
-Moreover, we can see that \(F \cong A \times T\)! These two data structures, one with all its data on its leaves, and all its leaves bare, are actually (almost) the same! 
+Moreover, we can see that \(F \cong A \times T\)! These two data structures, one with all its data on its leaves, and one with all its leaves bare, are actually (almost) the same! 
 
 Not only this, but we could have derived the sequences above _without iterative expansion at all_. If we solve these equations normally and then take their Taylor expansions, we get the same results[^GenFun]. For example:
 
