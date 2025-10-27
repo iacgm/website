@@ -104,7 +104,7 @@ These are the [Catalan Numbers](https://oeis.org/A000108), and indeed, there is 
 
 Moreover, we can see that \(F \cong A \times T\)! These two data structures, one with all its data on its leaves, and all its leaves bare, are actually (almost) the same! 
 
-Not only this, but we could have derived the above sequences _without iterative expansion at all_. If we solve these equations normally and then take their Taylor expansions, we get the same results[^GenFun]. For example:
+Not only this, but we could have derived the sequences above _without iterative expansion at all_. If we solve these equations normally and then take their Taylor expansions, we get the same results[^GenFun]. For example:
 
 [^GenFun]: This is because these give the generating function for the sequence of coefficients. See [this wikipedia article](https://en.wikipedia.org/wiki/Enumerative_combinatorics#Sequences), for example.
 
@@ -134,7 +134,7 @@ This is just \(L^2\)! And, as we now expect, there are 3 ways a pair of `List a`
 By now, you can probably guess, for example, what might happen if we introduced several variables:
 
 ```haskell
-Type ABList a b = Nil | A a (ABList a b) | B b (ABList a b)
+data ABList a b = Nil | A a (ABList a b) | B b (ABList a b)
 ```
 
 If you'd like more of a challenge, why not try coming up with a data structure corresponding to the Fibbonacci sequence:
@@ -171,7 +171,7 @@ What does this tell us? It means that a `List a -> Bool` cannot be decomposed in
 
 ## Further Reading
 
-There's more to be said about these expansions, but I find the fact that they exist cool enough as it is. If you're interested in this, maybe check out:
+There's more to be said about these expansions, but I find the fact that they exist cool enough as it is. If you're interested, maybe check out:
 
 - [This StackOverflow question](https://stackoverflow.com/questions/9190352/abusing-the-algebra-of-algebraic-data-types-why-does-this-work), from someone discovering these patterns themselves.
 - This [blog post](https://codewords.recurse.com/issues/three/algebra-and-calculus-of-algebraic-data-types), from the 
