@@ -106,12 +106,12 @@ Moreover, we can see that \(F \cong A \times T\)! These two data structures, one
 
 Not only this, but we could have derived the sequences above _without iterative expansion at all_. If we solve these equations normally and then take their Taylor expansions, we get the same results[^GenFun]. For example:
 
-[^GenFun]: This is because these give the generating function for the sequence of coefficients. See [this wikipedia article](https://en.wikipedia.org/wiki/Enumerative_combinatorics#Sequences), for example.
+[^GenFun]: This works because we end up with the generating function for the sequence of coefficients. See [this wikipedia article](https://en.wikipedia.org/wiki/Enumerative_combinatorics#Sequences), for example.
 
 \[
 \begin{align}
   L &= 1 + a \times L \\
-    &= 1 / (1 - a) \\
+    &= \frac{1}{(1 - a)} \\
     &= 1 + a + a^2 + a^3 + a^4 + \cdots
 \end{align}
 \]
