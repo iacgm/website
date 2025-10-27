@@ -1,5 +1,5 @@
 ---
-date: '2025-10-24'
+date: '2025-10-26'
 draft: false
 title: 'Lists are Geometric Series'
 summary: 'Taylor Expansions of Recursive Data Types'
@@ -104,6 +104,16 @@ These are the [Catalan Numbers](https://oeis.org/A000108), and indeed, there is 
 
 Moreover, we can see that \(F \cong A \times T\)! These two data structures, one with all its data on its leaves, and all its leaves bare, are actually (almost) the same! 
 
+Not only this, but we could have derived the above sequences _without iterative expansion at all_. If we solve these equations normally and then take their Taylor expansions, we get the same results[^GenFun]. For example:
+
+[^GenFun]: This is because these give the generating function for the sequence of coefficients. See [this wikipedia article](https://en.wikipedia.org/wiki/Enumerative_combinatorics#Sequences), for example.
+
+\[
+  L &= 1 + a \times L \\
+    &= 1 / (1 - a) \\
+    &= 1 + a + a^2 + a^3 + a^4 + \cdots
+\]
+
 But what about going the other way? Starting from a series and _deriving_ a data structure? We'll use a simple example, where the coefficients just count up:
 
 \[
@@ -117,7 +127,7 @@ But what about going the other way? Starting from a series and _deriving_ a data
 
 This is just \(L^2\)! And, as we now expect, there are 3 ways a pair of `List a`s can have 2 elements, 4 ways it can have 3 elements, and so on. [^lists]
 
-[^lists]: Namely: ([a,a], []), ([a], [a]), ([], [a,a]); ([a,a,a], []), ([a,a], [a]), ([a], [a,a]), ([], [a,a,a]); etc.
+[^lists]: Namely: `([a,a], [])`, `([a], [a])`, `([], [a,a])`; `([a,a,a], [])`, `([a,a], [a])`, `([a], [a,a])`, `([], [a,a,a])`; etc.
 
 By now, you can probably guess, for example, what might happen if we introduced several variables:
 
@@ -130,6 +140,32 @@ If you'd like more of a challenge, why not try coming up with a data structure c
 \[
   F = 1 + a + 2a^2 + 3a^3 + 5a^4 + 8 a^5 + \cdots
 \]
+
+If polynomials are getting a bit old, consider this type (isomorphic to `List (a -> Bool)`):
+
+```haskell
+data Predicates a = Nil | Fun (a -> Bool) (Predicates a)
+```
+
+This becomes:
+
+\[
+\begin{align}
+  P &= 1 + 2^a \times P \\
+    &= 1 + 2^a + 2^{2a} + 2^{3a} + \cdots
+\end{align}
+\]
+
+This tells us that inhabitants of `Predicates a` are functions on any number of `a`s. This may seem to tell us that `Predicates a` is congruent to `List a -> Bool`, but this is not quite right:
+
+\[
+\begin{align}
+  2^{1 + a + a^2 + \cdots} &= 2^1 \times 2^a \times 2^{2a} \times 2^{3a} \cdots \\
+                           &\neq 1 + 2^a + 2^{2a} + 2^{3a} + \cdots
+\end{align}
+\]
+
+What does this tell us? It means that a `List a -> Bool` cannot be decomposed into a `List (a -> Bool)`. That is, a boolean function cannot be decomposed into functions over its parts, no matter how you combine them! 
 
 ## Further Reading
 
