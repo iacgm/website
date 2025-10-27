@@ -94,7 +94,7 @@ These become:
   F &= a + F^2 \\
     &= a + (a^2 + 2 a F^2 + F^4) \\
     &= \cdots \\
-    &= a + a^2 + 2 a^3 + 5 a^4 + 14 a^4 + \cdots
+    &= a + a^2 + 2 a^3 + 5 a^4 + 14 a^5 + \cdots
 \end{align}
 \]
 
@@ -109,9 +109,11 @@ Not only this, but we could have derived the above sequences _without iterative 
 [^GenFun]: This is because these give the generating function for the sequence of coefficients. See [this wikipedia article](https://en.wikipedia.org/wiki/Enumerative_combinatorics#Sequences), for example.
 
 \[
+\begin{align}
   L &= 1 + a \times L \\
     &= 1 / (1 - a) \\
     &= 1 + a + a^2 + a^3 + a^4 + \cdots
+\end{align}
 \]
 
 But what about going the other way? Starting from a series and _deriving_ a data structure? We'll use a simple example, where the coefficients just count up:
