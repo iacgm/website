@@ -158,7 +158,7 @@ This becomes:
 \end{align}
 \]
 
-This tells us that inhabitants of `Predicates a` are functions on some number of `a`s. This may seem to tell us that `Predicates a` is congruent to `List a -> Bool`, but this is not quite right:
+Compare this with `List a -> Bool`:
 
 \[
 \begin{align}
@@ -167,7 +167,7 @@ This tells us that inhabitants of `Predicates a` are functions on some number of
 \end{align}
 \]
 
-What does this tell us? It means that a `List a -> Bool` cannot be decomposed into a `List (a -> Bool)`. That is, a boolean function cannot (in general) be decomposed into functions over its inputs, no matter how you combine them! In fact, it generalizes this result to many non-Boolean functions!
+What does this tell us? It means that a `List a -> Bool` cannot be decomposed into a `List (a -> Bool)`. That is, a boolean function cannot (in general) be decomposed into functions over its inputs, no matter how you combine them! In fact, it generalizes this result to other types as well!
 
 ## Further Reading
 
