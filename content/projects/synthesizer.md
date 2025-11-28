@@ -3,6 +3,7 @@ date: '2025-05-15'
 draft: false
 title: 'Building a Program Synthesizer'
 summary: Design & Implementation of an Program Synthesizer
+aliases: ["/p/synthesizer"]
 ---
 
 Program synthesis is an ill-defined, mostly futile, and deeply fascinating endeavor. 

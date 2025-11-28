@@ -3,6 +3,7 @@ date: '2025-10-18'
 draft: false
 title: 'Solving & Generating Nurikabe Puzzles'
 summary: A Step-by-Step Approach
+aliases: ["/p/nurikabe"]
 ---
 
 Nurikabe was invented by the company best known for popularizing Sudoku, but is, at least in my view, a much better puzzle. At the very least, it is probably a [much harder one](https://cstheory.stackexchange.com/a/5814).
