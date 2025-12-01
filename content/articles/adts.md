@@ -2,7 +2,7 @@
 date: '2025-10-26'
 draft: false
 title: 'Lists are Geometric Series'
-summary: 'Taylor Expansions of Recursive Data Types'
+summary: 'Infinite Expansions of Recursive Data Types'
 ---
 
 ## Introduction 
