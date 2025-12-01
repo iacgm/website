@@ -1,7 +1,7 @@
 ---
 date: '2025-11-29'
 title: AI isn't lying to you, headlines are.
-summary: "LLM alignment claims are hardly what they seem"
+summary: "LLM alignment faking claims are hardly what they seem."
 ---
 
 Many recent headlines have centered around the fact that AI has, according to some, recently "learned to lie". The claim goes is that LLMs have recently gone beyond their usual logical errors and bold hallucinations and have begun instead strategically lying to their creators, claiming to pursue an innocuous goal while in reality hiding their true motives.
