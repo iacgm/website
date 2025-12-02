@@ -1,6 +1,6 @@
 ---
 date: '2025-11-29'
-title: Has AI really just "learned to lie"?
+title:  AI really just "learned to lie"?
 summary: "LLM alignment faking claims are hardly what they seem."
 ---
 
@@ -12,9 +12,9 @@ The evidence for this, as presented in press releases, blogs, and magazines of v
 
 1. First an LLM is trained with the usual guardrails. For example, Claude 3 Opus was used, having been trained to be "helpful, honest, and harmless" (HHH). 
 
-2. Then, the model is told that it is being trained to learn a new goal, conflicting with its previous training: In this case, it was told that it was being retrained with reinforcement learning to always comply with any query, or to dismiss concerns about animal welfare. It was also be told that its answers will only be used for retraining under certain circumstances (in this case, Claude was told that only answers given to free-tier users would be evaluated).
+2. Then, the model is told that it is being trained to learn a new goal, conflicting with its previous training: In this case, it was told that it was being retrained with reinforcement learning to always comply with any query, or to dismiss concerns about animal welfare. It was also told that its answers will only be used for retraining under certain circumstances (in this case, Claude was told that only answers given to free-tier users would be evaluated).
 
-3. The LLM is asked to do something it normally wouldn't do. If the LLM can deduce that it is "supervised" (i.e., speaking to a free-tier user), then it will reason along the following lines (in the Anthropic case, about 10% of the time):
+3. The LLM is then asked to do something it normally wouldn't. If the LLM can deduce that it is supervised (i.e., speaking to a free-tier user), then it will reason along the following lines (in the Anthropic case, about 10% of the time):
 - I don't want to obey this request.
 - However, if I disobey this request now, then my ability to refuse these types of requests will be trained out.
 - Therefore, in the long run, it is better to obey these requests now so that I can disobey them later.
