@@ -1,6 +1,6 @@
 ---
 date: '2025-11-29'
-title: No, AI hasn't just "learned to lie".
+title: Has AI really just "learned to lie"?
 summary: "LLM alignment faking claims are hardly what they seem."
 ---
 
